@@ -1,0 +1,29 @@
+USE portfolio_db;
+
+-- 1. Πτυχιακή Εργασία
+INSERT INTO projects (title, description, tech_stack, github_link) 
+VALUES (
+    'Bachelor Thesis: Course Evaluation (UE5)', 
+    'Σχεδιασμός διαδραστικής εφαρμογής αξιολόγησης με Unreal Engine 5. Υλοποίηση συστημάτων διαλόγου και game mechanics για βελτίωση του user experience.', 
+    'Unreal Engine 5, C++, Blueprints', 
+    'https://github.com/panagiotispal/Bachelor-Thesis-Course-Evaluation-UE5-/tree/main' 
+);
+
+-- 2. Currency Converter (Το Java Project από το Screenshot 11)
+INSERT INTO projects (title, description, tech_stack, github_link) 
+VALUES (
+    'Currency Converter Web App', 
+    'Διαδικτυακή εφαρμογή μετατροπής συναλλάγματος σε περιβάλλον Apache Tomcat. Υλοποίηση με χρήση Java Servlets και JSP για δυναμική διαχείριση ισοτιμιών.', 
+    'Java, Servlets, JSP, Apache Tomcat', 
+    'https://github.com/panagiotispal/Currency-Converter'
+);
+
+-- 3. Personal Portfolio Website
+INSERT INTO projects (title, description, tech_stack, github_link) 
+VALUES (
+    'Personal Portfolio Website', 
+    'Full-stack ιστοσελίδα για την παρουσίαση του βιογραφικού και των projects μου. Διαθέτει δυναμικό διαχειριστικό σύστημα με Python και βάση δεδομένων.', 
+    'Python, Flask, MySQL, HTML/CSS', 
+    'https://github.com/panagiotispal'
+);
+TRUNCATE TABLE projects;
