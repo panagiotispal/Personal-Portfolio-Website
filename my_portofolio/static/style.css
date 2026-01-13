@@ -1,0 +1,232 @@
+/* Βασικές Ρυθμίσεις & Χρώματα */
+:root {
+    --bg-dark: #121212;       /* Πολύ σκούρο φόντο */
+    --bg-card: #1e1e1e;       /* Ελαφρώς πιο ανοιχτό για κάρτες/sidebar */
+    --text-main: #ffffff;     /* Λευκό κείμενο */
+    --text-muted: #b0b0b0;    /* Γκρι κείμενο */
+    --accent: #ff4757;        /* Το κόκκινο χρώμα που σου άρεσε */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Layout: Sidebar Αριστερά - Content Δεξιά */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR (ΑΡΙΣΤΕΡΑ) --- */
+.sidebar {
+    width: 350px;
+    background-color: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    position: fixed; /* Κολλημένο αριστερά */
+    height: 100vh;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+
+.profile-img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    filter: grayscale(20%); /* Λίγο ασπρόμαυρο για στυλ */
+}
+
+.sidebar h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.role {
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--accent);
+}
+
+/* --- CONTENT (ΔΕΞΙΑ) --- */
+.content {
+    margin-left: 350px; /* Όσο το πλάτος του sidebar */
+    padding: 60px 80px;
+    width: 100%;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.sub-heading {
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+/* Cards για Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.skill-card {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card i {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+}
+
+/* Projects Styling */
+.projects-list {
+    display: grid;
+    gap: 20px;
+}
+
+.project-item {
+    background: var(--bg-card);
+    padding: 30px;
+    border-left: 4px solid var(--accent); /* Κόκκινη γραμμή αριστερά */
+    border-radius: 4px;
+}
+
+.btn-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.btn-link:hover {
+    color: var(--accent);
+}
+
+/* Κινητά Τηλέφωνα (Responsive) */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 40px 20px;
+    }
+    .content {
+        margin-left: 0;
+        padding: 40px 20px;
+    }
+}
+/* --- EXPERIENCE SECTION STYLING --- */
+.experience-section {
+    margin-bottom: 50px;
+}
+
+.timeline {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.timeline-item {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Κουκκίδα στον άξονα */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px; /* Ρύθμιση για να πέσει πάνω στη γραμμή */
+    top: 25px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--accent);
+}
+
+.timeline-item h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: var(--text-main);
+}
+
+.timeline-item .date {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Μικρές διορθώσεις στο Contact Info του Sidebar */
+.contact-info {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.contact-info p {
+    margin-bottom: 5px;
+}
+
+.contact-info i {
+    color: var(--accent);
+    margin-right: 8px;
+}

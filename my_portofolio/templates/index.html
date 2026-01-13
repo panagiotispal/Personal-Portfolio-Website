@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrit Pal - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Amrit Pal" class="profile-img">
+                
+                <h1>Amrit Pal</h1>
+                <p class="role">COMPUTER SCIENCE GRADUATE</p> <div class="social-icons">
+                    <a href="https://github.com/panagiotispal" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/amrit-pal-a637b62a0/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:panosamrit@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +30 698 983 8706</p> <p><i class="fas fa-map-marker-alt"></i> VARTHOLOMIO HLEIAS, GREECE</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            
+            <section class="about-section">
+                <h2>About Me</h2>
+                <div class="sub-heading">Junior Developer | UE5 Enthusiast</div>
+                <p>
+                    Graduate in Computer Science and Telecommunications seeking a Junior Developer position. 
+                    I possess solid foundational programming knowledge and hands-on experience in IT support 
+                    and application development. Having fulfilled my military service in a Research & IT Department, 
+                    I have strengthened my sense of responsibility and attention to detail. </p>
+            </section>
+
+            <section class="experience-section">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="date">6 Months</span>
+                        <h3>Research & IT Department (Military Service)</h3>
+                        <p>Worked within a classified, high-security network environment. Maintained and upgraded software systems and managed security camera infrastructure.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="date">6 Months</span>
+                        <h3>Internship - LOGIC DATA</h3>
+                        <p>Focused on data management, hardware repair, and technical support. Handled software installation and troubleshooting for clients.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="date">6 season</span>
+                        <h3>Food Service Industry - Staff</h3>
+                        <p>Managed orders and transactions using <strong>Pegasus software</strong>. Developed multitasking and communication skills in a fast-paced environment, ensuring efficient digital order management.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="skills-section">
+                <h2>Technical Skills</h2> <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-cuttlefish"></i>
+                        <h3>C / C++</h3>
+                        <p>Core programming, Memory management, Unreal Engine scripting.</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                        <p>Scripting, Automation, Backend logic.</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>Unreal Engine 5</h3>
+                        <p>Game mechanics, Blueprints, Interactive Environments.</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h3>SQL</h3>
+                        <p>Database design, Data management.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="projects-section">
+                <h2>Recent Projects</h2>
+                <div class="projects-list">
+                    {% for project in projects %}
+                    <div class="project-item">
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                        <small class="tech-stack"><i class="fas fa-code"></i> {{ project.tech_stack }}</small>
+                        <br>
+                        <a href="{{ project.github_link }}" class="btn-link" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
